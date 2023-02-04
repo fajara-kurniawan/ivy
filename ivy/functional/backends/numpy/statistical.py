@@ -253,3 +253,25 @@ def einsum(
 
 
 einsum.support_native_out = True
+
+def percentile(
+    x: np.ndarray,
+    q: int=99,
+    /,
+    *,
+    axis: Optional[Union[int, Sequence[int]]] = None,
+    dtype: Optional[np.dtype] = None,
+    keepdims: bool = False,
+    out: Optional[np.ndarray] = None,
+) -> np.ndarray:
+
+    return  np.asarray(
+        np.percentile(
+            a=x,
+            q=q,
+            axis=axis,
+            dtype=dtype,
+            keepdims=keepdims,
+            out=out
+        )
+    )
